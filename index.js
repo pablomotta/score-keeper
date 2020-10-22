@@ -49,11 +49,11 @@ function sortAndLimit(array) {
 function clearScores() {
 	localStorage.removeItem('highScoreArr');
 }
-
+// adds new scores
 submitButton.addEventListener('click', function () {
 	var name = userName.value;
 	var newScore = score.value;
 	addToLocalStorage(name, newScore);
 });
-
+// clears all the scores
 clearScoreButton.addEventListener('click', clearScores);
