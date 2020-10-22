@@ -9,7 +9,7 @@ var highScoreList = JSON.parse(localStorage.getItem('highScoreArr')) || [];
 if (highScoreList.length > 0) {
 	// store sorted and limited high score array in variable for looping
 	var sortedHighScores = sortAndLimit(highScoreList);
-	console.log(sortedHighScores);
+
 	// loop through high score array and populate HTML
 	sortedHighScores.map(function (user) {
 		var li = `<li class="list-group-item d-flex justify-content-between align-items-center">
@@ -23,7 +23,6 @@ if (highScoreList.length > 0) {
 }
 
 function addToLocalStorage(userName, userScore) {
-	console.log('function works');
 	//construct user/score object.
 	var userObj = {
 		name: userName,
@@ -41,7 +40,6 @@ function sortAndLimit(array) {
 	var sortedArray = array.sort(function (a, b) {
 		return b.score - a.score;
 	});
-	console.log('sorted array', sortedArray);
 	// limit to 5 and return
 	return sortedArray.slice(0, 5);
 }
